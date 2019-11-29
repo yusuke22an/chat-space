@@ -17,14 +17,12 @@
  @import "reset";
  @import "messages";
  @import "font-awesome-sprockets";
- @import "./font-awesome";
+@import "./font-awesome";
 
  
-
 * {
   box-sizing: border-box;
 }
-
 
 .chat-side {
   width: 300px;
@@ -37,63 +35,51 @@
     display: flex;
     align-items: center;
     padding: 0 20px;
-
-    .side-header__box {
+    &__box {
       display: flex;
       justify-content: space-between;
       width: 100%;
       font-weight: bold;
-
-      p.side-header__box__user-name {
+      &__user-name {
         display: block;
         margin-block-start: 1em;
         margin-block-end: 1em;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
       }
-
-      ul.side-header__box__menu {
+      &__menu {
         display: flex;
         margin-block-start: 1em;
         margin-block-end: 1em;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
-
-        li.side-header__box__menu__new-group {
+        &__new-group {
           margin-left: 0.3rem;
-
           a {
             color: white;
-            
             i.fa__fa-edit {
               display: inline-block;
               font: normal normal normal 14px/1 FontAwesome;
               font-size: inherit;
               text-rendering: auto;
               -webkit-font-smoothing: antialiased;
-
               .fa-edit:before, .fa-pencil-square-o:before {
                 content: "\f044";
               }
             }
           }
         }
-
-        li.side-header__box__menu__edit-user {
+        &__edit-user {
           margin-left: 0.3rem;
-
           a {
             color: white;
-
             i.fa__fa-cog {
-
               .fa {
                 display: inline-block;
                 font: normal normal normal 14px/1 FontAwesome;
                 font-size: inherit;
                 text-rendering: auto;
                 -webkit-font-smoothing: antialiased;
-
                 .fa-gear:before, .fa-cog:before {
                   content: "\f013";
                }
@@ -104,24 +90,21 @@
       }
     }
   }
-
   .groups {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 20px 20px 0;
     overflow: scroll;
-
     a {
       color: white;
-
+      text-decoration: none;
       .group {
         margin-bottom: 40px;
-
-        p.group__group-name {
+        &__group-name {
           font-size: 15px;
           margin-bottom: 5px;
         }
-        p.group__latest-message {
+        &__latest-message {
           font-size: 11px;
         }
       }
@@ -132,7 +115,6 @@
 .chat-main {
   width: calc(100vw - 300px);
   float: left;
-
   .main-header {
     height: 100px;
     padding: 0 40px;
@@ -140,28 +122,23 @@
     justify-content: space-between;
     border-bottom: solid 1px #eee;
     overflow: scroll;
-
-    .main-header__left-box {
+    &__left-box {
       margin-top: 35px;
+      &__current-group {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+      &__member-list {
+        display: flex;
+        font-size: 12px;
+        color: #999999;
+      }
     }
-
-    .main-header__left-box__current-group {
-      font-size: 20px;
-      color: #333;
-      margin-bottom: 15px;
-    }
-
-    .main-header__left-box__member-list {
-      display: flex;
-      font-size: 12px;
-      color: #999999;
-    }
-
     a:visited, a:hover,  a:active {
       color: #38aef0;
     }
-
-    .main-header__edit-btn {
+    &__edit-btn {
       height: 40px;
       line-height: 40px;
       padding: 0 20px;
@@ -171,35 +148,29 @@
       right: 40px;
     }
   }
-
   .messages {
     height: calc(100vh - 190px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
   }
-
   .form {
     height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
     color: #000;
     font: 16px; 
-
     form {
       display: flex;
-
       .input-box {
         position: relative;
         width: 100%;
-
-        label.input-box__image {
+        &__image {
           font-size: 1.3rem;
           position: absolute;
           top: 10px;
           right: 10px;
           cursor: pointer;
-
           i.fa.fa-iage {
             display: inline-block;
             font: normal normal normal 14px/1 FontAwesome;
@@ -211,14 +182,13 @@
             display: none;
           }
         }
-        .input-box__text {
+        &__text {
           height: 50px;
           width: 100%;
           padding: 0 40px 0 10px;
           color: #434a54;
           border-style: none;
         }
-        
       }
       .submit-btn {
         width: 100px;

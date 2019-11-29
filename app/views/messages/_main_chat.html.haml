@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-%html{lang: "ja"}
-  %head
-    %meta{charset: "utf-8"}
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
-
-
-
-
 .chat-main
   .main-header
     .main-header__left-box
-      %h2.main-header__left-box__current-group{"data-group_id" => "6901"}
+      %h2.main-header__left-box__current-group{"data-group_id": "6901"}
         jump_comics
       %ul.main-header__left-box__member-list
         Member：
@@ -20,17 +11,17 @@
   .messages
   
   .form
-    %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/7442/messages", :enctype => "multipart/form-data", :method => "post"}
-      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-      %input{:name => "authenticity_token", :type => "hidden", :value => "7vIZxp6PpOiKcEY0mnCWZmEMtM1Cas97eGz+rmDY9yQ3MQ1bNgl4hjzkcd58TR0PdqCr5T6yLCnBL3WNcoRHZg=="}/
+    %form#new_message.new_message{"accept-charset": "UTF-8", action: "/groups/7442/messages", enctype: "multipart/form-data", method: "post"}
+      %input{name: "utf8", type: "hidden", value: "✓"}/
+      %input{name: "authenticity_token", type: "hidden", value: "7vIZxp6PpOiKcEY0mnCWZmEMtM1Cas97eGz+rmDY9yQ3MQ1bNgl4hjzkcd58TR0PdqCr5T6yLCnBL3WNcoRHZg=="}/
       .input-box
-        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
 
-        %label.input-box__image{:for => "message_image"}
+        %label.input-box__image{for: "message_image"}
           %i.fa.fa-image
-          %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
+          %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
 
-      %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+      %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
 
 
 
