@@ -17,8 +17,9 @@
  @import "reset";
  @import "messages";
  @import "font-awesome-sprockets";
-@import "./font-awesome";
-
+ @import "./font-awesome";
+ @import "user";
+ @import "flash";
  
 * {
   box-sizing: border-box;
