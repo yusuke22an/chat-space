@@ -2,14 +2,13 @@
   .side-header
     .side-header__box
       .side-header__box__user-name 
-        %p
-          yuyu
+        = current_user.name
       %ul.side-header__box__menu
         %li.side-header__box__menu__new-group
           =link_to "#", class:"a" do
             %i.fa.fa-edit
         %li.side-header__box__menu__edit-user
-          =link_to "#", class:"a" do
+          =link_to edit_user_path(current_user), class:"a" do
             %i.fa.fa-cog
   .groups
     =link_to "#", class: "group" do
