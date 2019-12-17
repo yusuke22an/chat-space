@@ -51,17 +51,16 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      console.log(message)
       var html = buildMessage(message);
       $('.messages').append(html)
-      // $('#message_content').val('')
       $('#new_message')[0].reset();
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       $('.submit-btn').prop('disabled', false);
     })
     .fail(function(message){
       alert('メッセージ送信に失敗しました');
-      
+
+
     })
   })
 })
