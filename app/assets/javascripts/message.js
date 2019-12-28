@@ -1,5 +1,4 @@
 $(function(){
-
   var reloadMessages = function() {
     last_message_id = $('.message:last').data("message-id");
     $.ajax({
@@ -11,7 +10,7 @@ $(function(){
     .done(function(messages) {
       var insertHTML = '';
       $.each(messages, function(i, message) {
-        insertHTML += buildHTML(message)
+        insertHTML += buildMessage(message)
       });
       $('.messages').append(insertHTML);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
@@ -21,7 +20,7 @@ $(function(){
     });
   };
 
-  var buildHTML = function(message) {
+  function buildMessage(message) {
     if (message.content && message.image) {
       var html = `
         <div class="message" data-message-id= "${message.id}">
@@ -57,7 +56,7 @@ $(function(){
             </p>
           </div>
         </div>`
-    } else if (message.image) {
+    } else {
       var html = `
         <div class="message" data-message-id= "${message.id}" >
           <div class="upper-message">
@@ -75,44 +74,6 @@ $(function(){
     };
     return html;
   };
-
-  function buildMessage(message){
-    if (message.image_url){
-      var html = `<div class="message">
-                    <div class="upper-message">
-                      <div class="upper-message__user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="upper-message__date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="lower-message">
-                      <p class="lower-message__content">
-                        ${message.text}
-                      </p>
-                      <img class="lower-message__image" src="${message.image_url}">
-                    </div>
-                  </div>`
-    } else {
-      var html = `<div class="message">
-                    <div class="upper-message">
-                      <div class="upper-message__user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="upper-message__date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="lower-message">
-                      <p class="lower-message__content">
-                        ${message.text}
-                      </p>
-                    </div>
-                  </div>`
-    }  
-    return html;
-  }
 
   $('.new_message').on('submit', function(e){
     e.preventDefault()
@@ -141,3 +102,11 @@ $(function(){
     setInterval(reloadMessages, 7000);
   }
 })
+
+// if(img text) {
+//  img text
+//} else if (img){
+    //img
+//}else {
+  //text
+//}
