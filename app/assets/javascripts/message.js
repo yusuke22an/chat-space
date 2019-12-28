@@ -96,6 +96,7 @@ $(function(){
     })
     .fail(function(message){
       alert('メッセージ送信に失敗しました');
+      $('.submit-btn').prop('disabled', false);
     })
   })
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
