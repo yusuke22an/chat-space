@@ -103,10 +103,3 @@ $(function(){
   }
 })
 
-// if(img text) {
-//  img text
-//} else if (img){
-    //img
-//}else {
-  //text
-//}
